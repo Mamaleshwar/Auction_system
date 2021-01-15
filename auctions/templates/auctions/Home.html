@@ -1,0 +1,273 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    {% block title %}<title>Home-Auction Web</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}"/>
+    
+         
+    <style>
+    /* <!-----------------for font size and style---------------------->         */
+            h1{
+                color: black;
+                text-transform: uppercase;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h2{
+                color: black;
+                text-transform: uppercase;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h3{
+                color: white;
+                text-transform: none;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h4{
+                color: #3696dc;
+                text-transform: none;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h5{
+                color: white;
+                text-transform: none;     
+                letter-spacing: 2px;
+            }
+            p{
+                font-size:16px;
+                line-height: 24px;
+            }  
+        .box{
+            width: 500px;
+            height: 200px;
+            padding: 20px;
+            margin: 100px auto;
+            box-shadow: 0px 0px 10px 2px grey;
+            border: 10px solid red;
+            background-size: cover;
+        }
+        .container1{
+                max-width:1270px;
+                width:100%;
+                margin: 0 auto;
+                display: flex;
+            }
+            .column{
+                margin: 0 15px 25px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+                0 1px 2px rgba(0, 0,0, 0.24);
+                background: #fff;
+                border-radius: 10px;
+                flex-basis: 33%;
+            }
+            .card{
+                padding:15px 25px;
+            }
+            img{
+                border:  2px solid black;
+            }
+        .button {
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+
+            .button1 {background-color: #4CAF50;} /* Green */
+            .button2 {background-color: #008CBA;} /* Blue */
+
+            .button1 {padding: 10px 24px;}
+        .button2 {padding: 15px 30px}
+            a:hover {
+                background-color: darkgrey;
+            }
+        </style>
+</head>
+<body>
+      
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+           <!---- <img src="Images/logo2.PNG" height="60" width="60"> ---->
+            <a class="navbar-brand" href="{% url 'Home' %}">HOME</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'Ourteam' %}">Our Team</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact us</a>
+                </li>
+                <li>
+                    <a href="{% url 'loginpage' %}">To Sell/Bid</a>   
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+      <!---------------------------- Header Carousel------------------------------>
+      <header id="myCarousel" class="carousel slide">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+              <li data-target="#myCarousel" data-slide-to="4"></li>
+          </ol>
+          <!-------------------- carousel slides ------------------------------>
+          <div class="carousel-inner">
+              <div class="item active">
+                  <div class="fill" style="background-image:url('static/Images/home1.PNG');"></div>
+              </div>
+              <div class="item">
+                  <div class="fill" style="background-image:url('static/Images/homed.png');"></div>
+                  
+              </div>
+              <div class="item">
+                  <div class="fill" style="background-image:url('static/Images/home2.jpg');"></div>
+                 
+              </div>
+               <div class="item">
+                  <div class="fill" style="background-image:url('static/Images/home5.jpg');"></div>
+                  
+              </div>
+              <div class="item">
+                  <div class="fill" style="background-image:url('static/Images/homep.jpg');"></div>
+                  
+              </div>
+              
+          </div>
+  
+          <!----------------------------- Controls ------------------------------------>
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="icon-next"></span>
+          </a>
+      </header>
+  
+       <div class="row">
+              <div class="col-lg-12">
+                  <h2 class="page-header">
+                    Finished Auctions
+                  </h2>
+              </div>    
+      <br>   
+         <div class="container1">
+          <div class="column">
+             <div class="card">
+                   
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4>Apple MacBook Pro 13"</h4>
+                          <h4>2.3GHz 128GB Space Gray</h4>
+                          <img src="{% static 'Images/f1.PNG' %}" height="305px" width="330px">
+                      </div>
+                      <div class="panel-body">
+                          <div class="ratings">
+                          <p class="pull-right">Customer review</p>
+                          <p>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                          </p>
+                      </div> 
+                      </div>
+                  </div>          
+            </div>            
+          </div>
+          <div class="column">
+             <div class="card">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4>Ray-Ban High Street 54mm Sunglasses </h4>
+                          <img src="{% static 'Images/f3.PNG' %}" height="317px" width="330px">
+                      </div>
+                      <div class="panel-body">
+                          <div class="ratings">
+                          <p class="pull-right">Customer review</p>
+                          <p>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                          </p>
+                      </div> 
+                      </div>
+                  </div>
+              </div>            
+          </div>
+          <div class="column">
+             <div class="card">
+                   <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4>Apple iPad Pro 11" Wi-Fi 64GB Silver</h4>
+                          <center> 
+                          <img src="{% static 'Images/f2.PNG' %}" height="312px" width="310px">
+                          </center>
+                      </div>
+                        <div class="panel-body">
+                          <div class="ratings">
+                          <p class="pull-right">Customer review</p>
+                          <p>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                          </p>
+                      </div> 
+                      </div>
+                  </div>
+              </div>            
+          </div>
+      </div>
+      </div>
+          
+  <h2>How it Works</h2>
+  <center>
+      <img src="{% static 'Images/steps.PNG' %}" style="width: 80%">
+  </center>
+  <br>
+  <br>
+       <!--------------------------------------- jQuery -------------------------------------------------------->
+       <script src="{% static 'js/jquery.js' %}"></script>
+       <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <!------------------------------to Activate the Carousel & change the interval timing ----------------------------------------->
+      <script>
+      $('.carousel').carousel({
+          interval: 2000 
+      })
+      </script>
+  </body>
+  </html>

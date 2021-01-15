@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Team-Auction Web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}"/>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 4px 8px 12px 8px rgba(0, 0, 0, 0.2);
+    margin: 0px auto;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+    
+    h1{
+        font-size: 50px;
+        font-family:'Roboto',sans-serif;
+                color: grey;
+                border: 1px black;
+                text-transform: none;
+                text-align:center;
+                letter-spacing: 0px;
+               
+    }
+    h2{
+        font-family:'Roboto',sans-serif;
+                color: darkblue;
+                border: 1px black;
+                text-transform: none;
+                text-align:center;
+                letter-spacing: 0px;
+                font-size: 30px;
+    }
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+    
+    .team{
+        width:75%;
+        margin: 0px auto;
+        color: grey;
+    }    
+</style>
+</head>
+<body>
+
+<center>
+    <img src="{% static 'Images/team.jpg' %}" height="100%" width="100%">
+</center>
+<h1>Meet Our Team</h1>
+<div id="body" class="team">
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h2>Jane Philip</h2>
+        <center>
+        <img src="{% static 'Images/alles.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP, General Manager</p>
+        <p>janephilip@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h2>Andy cring</h2>
+        <center>
+        <img src="{% static 'Images/andy.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">Interim Chief Financial Officer</p>
+        <p>andycring@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h2>Rob Hattrell</h2>
+        <center>
+        <img src="{% static 'Images/rob.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP, Head of Auction web Europe</p>
+        <p>rob@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+</div>
+    
+    
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h2>Mazen Rawashdeh</h2>
+        <center>
+        <img src="{% static 'Images/mazen.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP & Chief Technology Officer</p>
+        <p>mazen@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h2>Jordan Sweetnam</h2>
+        <center>
+        <img src="{% static 'Images/jordan.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP & General Manager, North America</p>
+        <p>jordan@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h2>Pete Thompson</h2>
+        <center>
+        <img src="{% static 'Images/pette.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP & Chief Product Officer</p>
+        <p>pette@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+</div>
+    
+   <div class="row"> 
+     <div class="column">
+    <div class="card">
+      <h2>Marie oh Huber</h2>
+        <center>
+        <img src="{% static 'Images/marie.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP Legal Affairs, General Counsel & Secretary</p>
+        <p>marie@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+    
+   <div class="column">
+    <div class="card">
+      <h2>Wendy Jones</h2>
+        <center>
+        <img src="{% static 'Images/wendy.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP, Global Operations</p>
+        <p>wendy@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+
+     <div class="column">
+    <div class="card">
+      <h2>Jay Lee</h2>
+        <center>
+        <img src="{% static 'Images/jay.PNG' %}" alt="Jane" style="width:90%">
+        </center>    
+        <div class="container">
+        <p class="title">SVP, International</p>
+        <p>jaylee@auctionweb.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <h1><b>And 1,00,000+ People are working for you........</b></h1>
+</body>
+</html>

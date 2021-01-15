@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Auction Web</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}"/>
+  <style>
+body{
+                background-image:  url({% static 'Images/s_bg.jpg' %});
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family:'Roboto',sans-serif;
+                color: #3e3e3e;
+                padding: 50px 0;
+            }
+            </style>
+
+</head>
+<body>
+<div>    
+    <h1>Create Auction</h1>
+<div class="wrapper">
+    <form action="{% url 'auctions:create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if error_message %}<p class="error"><strong>{{ error_message }}</strong></p>{% endif %}
+        <span>Enter title:</span>
+        <span class="required_field" >*</span>
+        <br>
+        <input class="textbox" type="text" name="title">
+        <br>
+        <br>
+        <span>Enter description:</span>
+        <br>
+        <input class="description_box" type="text" name="description">
+        <br>
+        <br>
+        <span>Upload picture:</span>
+        <br>
+        <input class="textbox" type="file" accept="image/*" name="image">
+        <br>
+        <br>
+        <span>Enter minimum value:</span>
+        <span class="required_field" >*</span>
+        <br>
+        <input class="textbox" type="text" name="min_value">
+        <br>
+        <br>
+        <input type="submit" class="submit_button" name="submit_button" value="Create">
+    </form>
+</div>
+</div>
+
+
+      {% block sidebar %}
+        <ul class="navbar">
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:auctions' %}">Home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'index' %}">Active auction</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:auctions' %}">All auction</a></li>
+          {% if user.is_authenticated %}
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'my_auctions' %}">My auctions</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'my_bids' %}">My bids</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:create' %}">Create an auction</a> </li>
+          {% endif %}
+          {% if user.is_authenticated %}
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
+            <li class="navbar-item-right"><span class="navbar-text"><span class="username">Hello {{ user.get_username }}</span></span></li>
+          {% else %}
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'register' %}?next={{request.path}}">Register</a></li>
+          {% endif %}
+        </ul>
+     {% endblock %}
+      <div class="main-content">{% block content %}{% endblock %}</div>
+</body>
+</html>
+

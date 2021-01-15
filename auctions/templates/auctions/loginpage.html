@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-image:  url({% static 'Images/bg8.jpg' %});
+   background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family:'Roboto',sans-serif;
+                color: #3e3e3e;
+                padding: 50px 0;  
+    }
+
+.right {
+  right: 0;
+  background-image:  url({% static 'Images/bg8.jpg' %});
+   background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family:'Roboto',sans-serif;
+                color: #3e3e3e;
+                padding: 50px 0;  
+/*    background: linear-gradient(to top right, #cc66ff 0%, #99ccff 100%);*/
+
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 200px;
+  border-radius: 50%;
+}
+.btn { 
+        display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 12px;
+  width: 90%;
+  font-size: 20px;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px; 
+  text-align: center;
+  text-decoration:none;
+  letter-spacing: 3px;
+  transition: all 0.3s ease-out;
+    } 
+</style>
+</head>
+<body>
+
+<div class="split left">
+  <div class="centered">
+    <img src="{% static 'Images/a1.PNG' %}">   
+      <a href="{% url 'login' %}"><button class="btn">LOGIN</button></a> 
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <img src="{% static 'Images/reg.PNG' %}">
+      <a href="{% url 'register' %}"><button class="btn">REGISTER</button></a> 
+  </div>
+</div>
+     
+</body>
+</html> 

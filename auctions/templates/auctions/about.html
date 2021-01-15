@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About-Auction web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="hstyle.css">
+        <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}"/>
+        <style type="text/css"> 
+            body{
+                background-image:  url({% static 'Images/bgi.jpg' %});
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family:'Roboto',sans-serif;
+                color: #3e3e3e;
+                padding: 50px 0;
+            }
+            h1{
+                color: white;
+                text-transform: uppercase;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h2{
+                color: black;
+                text-transform: uppercase;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+             h3{
+                color: white;
+                text-transform: uppercase;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+            h4{
+                color: #3696dc;
+                text-transform: none;
+                text-align: justify;
+                letter-spacing: 2px;
+                font-size: 14px;
+            }
+            h5{
+                color: black;
+                text-transform: right;
+                text-align:center;
+                letter-spacing: 2px;
+            }
+             h6{
+                color: white;
+                text-transform: none;
+                text-align:left;
+                letter-spacing: 2px;
+            }
+            p{
+                font-size:16px;
+                line-height: 24px;
+            }
+            .container{
+                max-width:1270px;
+                width:100%;
+                margin: 0 auto;
+                display: flex;
+            }
+            .column{
+                margin: 0 15px 25px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+                0 1px 2px rgba(0, 0,0, 0.24);
+                background: #fff;
+                border-radius: 10px;
+                flex-basis: 33%;
+            }
+            .card{
+                padding:15px 25px;
+            }
+            img{
+                max-width:100%;
+            }
+             .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 55px 1375px;
+                cursor: pointer;
+            }
+            .button1 {padding: 10px 24px;}
+            a:hover {
+                background-color: darkgrey;
+            }
+            
+            .bodya{
+                width: 75%;
+                margin: 0px auto;
+            }
+        </style>
+    </head>
+    <body>
+    <h1><b>About auction web</b></h1>
+    <br>
+    <center>
+        <img style='border:5px solid black' src="{% static 'Images/bgf.jpg' %}" height="400px" width="650px">
+        <div class="w3-container">
+            <div class="w3-light-grey w3-section" style="width:57.5%">
+              <button onclick="myFunction('Demo3')" class="w3-button w3-block"> Meet Jamie Iannone, President and chief executive officer</button>
+        <div id="Demo3" class="w3-hide w3-container">
+            <br>
+            <img src="{% static 'Images/ceo.PNG' %}" height="250px" width="250px">
+            <p style="color: red"><b>"YOUR SATISFACTION IS OUR PRIORITY"</b></p>
+            <p style="font-style: italic">Jamie earned a Bachelor of Science from Princeton University and a Master of Business Administration from the Stanford Graduate School of Business. He previously served on the Board of Directors of The Children’s Place</p>
+            
+        </div>
+            </div>              
+        </div>
+        <script>
+            function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            } else { 
+            x.className = x.className.replace(" w3-show", "");
+            }
+            }
+        </script>
+    </center>
+    <div id="body1" class="bodya">
+        <h1> Why Auction Web</h1>
+            <h6><b>With over a decade’s experience, we know our responsibilities. Auction Web has helped thousands of people around the world to get what they want. Our technology is specifically designed for customers and is packed with features that maximise the benefits.</b></h6>
+    </div>
+    <div class="container">
+        <div class="column">
+           <div class="card">
+                <h2>Our humble beginnings</h2>
+                <h4>In 2007, Tom Kelly was trying to set up an auction for his mother to raise funds for a cause near and dear to her heart. He encountered steep commission fees and a lack of user control. Tom recognized this represented a real barrier to non profits and everyday heroes like his mom, who wanted to make a real difference in their communities. It was challenging to take their fundraising efforts to the next level due to lack of resources, expertise, and time.</h4>
+               <h4>Tom founded the Charity Auctions Today online auction platform that lets anyone set up a professional-quality auction or mobile bidding event in minutes. The platform features customizable templates, multiple mobile bidding options, personalized support from human account managers, and many more user-friendly features. Charity Auctions Today is the “click-and-easy” way to grow your bidding pool, increase your fundraising profits and reduce expenses so more money goes directly to your cause.</h4>
+                
+          </div>            
+        </div>
+        <div class="column">
+           <div class="card">
+                <h2>Look how far we’ve come</h2>
+               <center>
+               <img src="{% static 'Images/logo2.PNG' %}" width="70%">
+                <br>
+                <h4>Since launching Charity Auctions Today, Tom has helped organizations raise over $500,000,000. The platform has hosted over 250,000 auctions to date and continues to grow every month as people realize the value that Tom and his team bring to their non-profits. They are truly an extension of your in-house fundraising team.</h4> 
+                </center>
+            </div>            
+        </div>
+        <div class="column">
+           <div class="card">
+                <h2>A message from our founder, Tom</h2>
+                <h4>Thank you from the bottom of my heart. This has been a truly empowering journey. I have enjoyed being able to take something that started as a way to help my mother and grow it to help so many more people. Hearing your success stories is what keeps me getting out of bed everyday to create the best online auction platform, period. I will keep working hard to make sure that everyone who needs help raising funds for causes near and dear to their hearts has the support they are looking for.</h4>
+               <center>
+               <img src="{% static 'Images/tom.PNG' %}" width="70%" >
+                   <h5><b>Tom Kelly</b></h5>
+                   <h5><b>Founder</b></h5>
+            </center> 
+            </div>            
+        </div>
+    </div>
+    </body>
+</html>

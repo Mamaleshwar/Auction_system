@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Auction Web</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}"/>
+  <style>
+body{
+                background-image:  url('static/Images/s_bg.jpg');
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family:'Roboto',sans-serif;
+                color: #3e3e3e;
+                padding: 50px 0;
+            }
+            </style>
+
+</head>
+<body>
+    <div>
+        <h2>You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+    </div>
+      {% block sidebar %}
+        <ul class="navbar">
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:auctions' %}">Home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'index' %}">Auction Web</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:auctions' %}">All Products</a></li>
+          {% if user.is_authenticated %}
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'my_auctions' %}">My auctions</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'my_bids' %}">My bids</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{% url 'auctions:create' %}">Create an auction</a> </li>
+          {% endif %}
+          {% if user.is_authenticated %}
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
+            <li class="navbar-item-right"><span class="navbar-text"><span class="username">Hello {{ user.get_username }}</span></span></li>
+          {% else %}
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+            <li class="navbar-item-right"><a class="navbar-link" href="{% url 'register' %}?next={{request.path}}">Register</a></li>
+          {% endif %}
+        </ul>
+     {% endblock %}
+      <div class="main-content">{% block content %}{% endblock %}</div>
+</body>
+</html>
+
+
+<!-- #Logout Code (Define classes and link to Login) -->
+
+
+
